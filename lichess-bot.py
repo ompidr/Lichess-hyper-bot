@@ -233,8 +233,8 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
         def __init__(self, room):
             self.room = room
     opponent = game.black.name if game.white.name == user_profile["username"] else game.white.name
-    conversation.send_reply(SendLine('player'), f'Made by @prajeethishere, All The Best @{opponent}')
-    conversation.send_reply(SendLine('spectator'), f'Made by @prajeethishere, Good Luck @{opponent}')
+    conversation.send_reply(SendLine('player'), f'Made by @Nightmare_123, All The Best @{opponent}')
+    conversation.send_reply(SendLine('spectator'), f'Made by @Nightmare_123, Good Luck @{opponent}')
     
     variant=game.perf_name
 
@@ -360,7 +360,7 @@ def get_book_move(board, polyglot_cfg):
     for book in books:
         with chess.polyglot.open_reader(book) as reader:
             try:
-                selection = polyglot_cfg.get("selection", "weighted_random")
+                selection = polyglot_cfg.get("selection", "best_move")
                 if selection == "weighted_random":
                     move = reader.weighted_choice(board).move
                 elif selection == "uniform_random":
